@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--e html :D -->
+<html lang="pt-br">
+    <!--e o head ne vc sabe ne o cabeçalho ne -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- nome da pag-->
+    <title>teste</title>
+           <!--importando o a-frame-->
+           <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+              <!--importando o mindarjs-->
+           <script src="https://cdn.jsdelivr.net/npm/mind-ar@1.2.2/dist/mindar-image-aframe.prod.js"></script>
+<!--e o head ne vc sabe ne o cabeçalho ne -->
+
+</head>
+<!--e o body-->
+<body>
+    <!--tag usada pra criar a cena no vr
+    vr-mode-ui e pra desabilitar o botao do vr
+    mindar-image e pra colocar o target image
+    o device e pra bloquear a camera pra nao mexer com cursor afinal vvai usar a camera ne  -->
+    <a-scene 
+    device-orientation-device-ui="enabled false"
+    mindar-image="imageTargerSrc: https://cdn.glitch.global/6ec3199d-58b9-4a07-b10e-7453928f48d2/targets.mind?v=1694120337228 "
+    vr-mode-ui="false"> 
+
+         <!--usada pra carregar os arquivos tipo fotos videos modelos etc-->
+         <a-assets>
+         <!-- adicionando um marcador a cena e fazendo ele procurar o marcador (o mindar-image da cena) -->
+        <a-entity id="track" mindar-image-target="TargetIndex: 0"></a-entity>            
+        
+
+        <img id="neco" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7SR_y9LGCvRyszcXkqXCfabt5pCeMIpJhiZOfREHjpA&s" alt="neco">
+     
+         </a-assets>
+         <!-- criar a camera-->
+       <a-camera look-controls="enabled: false">
+
+       </a-camera>
+      <!--fazer uma imagem-->
+      <a-image src="#neco" position="0 0.2 0" height="1" width="1" ></a-image>
+      
+
+
+    </a-scene>
+</body>
+</html>
